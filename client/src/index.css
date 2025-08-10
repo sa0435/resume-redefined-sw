@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 4%);
+  --foreground: hsl(0, 0%, 95%);
+  --card: hsl(240, 21%, 15%);
+  --card-foreground: hsl(0, 0%, 95%);
+  --popover: hsl(240, 21%, 15%);
+  --popover-foreground: hsl(0, 0%, 95%);
+  --primary: hsl(263, 70%, 50%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(215, 25%, 27%);
+  --secondary-foreground: hsl(0, 0%, 95%);
+  --muted: hsl(217, 33%, 17%);
+  --muted-foreground: hsl(215, 20%, 65%);
+  --accent: hsl(263, 70%, 50%);
+  --accent-foreground: hsl(0, 0%, 100%);
+  --destructive: hsl(0, 63%, 31%);
+  --destructive-foreground: hsl(0, 0%, 95%);
+  --border: hsl(217, 36%, 12%);
+  --input: hsl(217, 36%, 12%);
+  --ring: hsl(263, 70%, 50%);
+  --chart-1: hsl(263, 70%, 50%);
+  --chart-2: hsl(187, 100%, 42%);
+  --chart-3: hsl(328, 86%, 70%);
+  --chart-4: hsl(142, 76%, 36%);
+  --chart-5: hsl(43, 74%, 66%);
+  --sidebar: hsl(240, 21%, 15%);
+  --sidebar-foreground: hsl(0, 0%, 95%);
+  --sidebar-primary: hsl(263, 70%, 50%);
+  --sidebar-primary-foreground: hsl(0, 0%, 100%);
+  --sidebar-accent: hsl(217, 33%, 17%);
+  --sidebar-accent-foreground: hsl(0, 0%, 95%);
+  --sidebar-border: hsl(217, 36%, 12%);
+  --sidebar-ring: hsl(263, 70%, 50%);
+  
+  /* Custom cosmic colors */
+  --space-black: hsl(0, 0%, 4%);
+  --dark-purple: hsl(247, 39%, 15%);
+  --deep-blue: hsl(219, 43%, 17%);
+  --stellar-blue: hsl(211, 65%, 22%);
+  --cosmic-purple: hsl(263, 70%, 50%);
+  --stellar-cyan: hsl(187, 100%, 42%);
+  --galaxy-pink: hsl(328, 86%, 70%);
+  
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Source Code Pro', 'Courier New', monospace;
+  --radius: 1rem;
+}
+
+.dark {
+  --background: hsl(0, 0%, 4%);
+  --foreground: hsl(0, 0%, 95%);
+  --card: hsl(240, 21%, 15%);
+  --card-foreground: hsl(0, 0%, 95%);
+  --popover: hsl(240, 21%, 15%);
+  --popover-foreground: hsl(0, 0%, 95%);
+  --primary: hsl(263, 70%, 50%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(215, 25%, 27%);
+  --secondary-foreground: hsl(0, 0%, 95%);
+  --muted: hsl(217, 33%, 17%);
+  --muted-foreground: hsl(215, 20%, 65%);
+  --accent: hsl(263, 70%, 50%);
+  --accent-foreground: hsl(0, 0%, 100%);
+  --destructive: hsl(0, 63%, 31%);
+  --destructive-foreground: hsl(0, 0%, 95%);
+  --border: hsl(217, 36%, 12%);
+  --input: hsl(217, 36%, 12%);
+  --ring: hsl(263, 70%, 50%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-mono antialiased;
+    background-color: hsl(0, 0%, 4%);
+  }
+}
+
+@layer utilities {
+  .text-space-black { color: hsl(0, 0%, 4%); }
+  .text-dark-purple { color: hsl(247, 39%, 15%); }
+  .text-deep-blue { color: hsl(219, 43%, 17%); }
+  .text-stellar-blue { color: hsl(211, 65%, 22%); }
+  .text-cosmic-purple { color: hsl(263, 70%, 50%); }
+  .text-stellar-cyan { color: hsl(187, 100%, 42%); }
+  .text-galaxy-pink { color: hsl(328, 86%, 70%); }
+  
+  .bg-space-black { background-color: hsl(0, 0%, 4%); }
+  .bg-dark-purple { background-color: hsl(247, 39%, 15%); }
+  .bg-deep-blue { background-color: hsl(219, 43%, 17%); }
+  .bg-stellar-blue { background-color: hsl(211, 65%, 22%); }
+  .bg-cosmic-purple { background-color: hsl(263, 70%, 50%); }
+  .bg-stellar-cyan { background-color: hsl(187, 100%, 42%); }
+  .bg-galaxy-pink { background-color: hsl(328, 86%, 70%); }
+  
+  .border-cosmic-purple { border-color: hsl(263, 70%, 50%); }
+  .border-stellar-cyan { border-color: hsl(187, 100%, 42%); }
+  .border-galaxy-pink { border-color: hsl(328, 86%, 70%); }
+}
+
+/* Custom animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes glow {
+  0% { box-shadow: 0 0 20px rgba(139, 92, 246, 0.3); }
+  100% { box-shadow: 0 0 30px rgba(139, 92, 246, 0.6); }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+@keyframes progress-fill {
+  0% { stroke-dashoffset: 251.2; }
+  100% { stroke-dashoffset: var(--progress-offset); }
+}
+
+@keyframes sparkFly {
+  0% { transform: scale(1) translateX(0); opacity: 1; }
+  100% { transform: scale(0.5) translateX(15px); opacity: 0; }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.animate-twinkle {
+  animation: twinkle 3s ease-in-out infinite;
+}
+
+.animate-progress-fill {
+  animation: progress-fill 2s ease-out forwards;
+}
+
+.animate-spark-fly {
+  animation: sparkFly 0.4s ease-out forwards;
+}
+
+/* Glassmorphism effects */
+.glass-card {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  background: rgba(26, 26, 46, 0.3);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+.glass-card:hover {
+  border-color: rgba(139, 92, 246, 0.5);
+  background: rgba(26, 26, 46, 0.4);
+}
+
+/* Cosmic gradient backgrounds */
+.cosmic-gradient {
+  background: linear-gradient(135deg, hsl(263, 70%, 50%) 0%, hsl(187, 100%, 42%) 50%, hsl(328, 86%, 70%) 100%);
+}
+
+.space-gradient {
+  background: linear-gradient(135deg, hsl(247, 39%, 15%) 0%, hsl(219, 43%, 17%) 50%, hsl(211, 65%, 22%) 100%);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(217, 36%, 12%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(263, 70%, 50%);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(263, 70%, 60%);
+}
+
+/* Text selection */
+::selection {
+  background: rgba(139, 92, 246, 0.3);
+  color: white;
+}
